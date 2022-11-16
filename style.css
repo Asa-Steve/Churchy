@@ -1,0 +1,302 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive; /*subject to removal*/
+}
+a
+{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+/* Nav Bar Section */
+nav
+{
+    background-color: black;
+    color: white;
+    min-height: 60px;
+}
+nav .wrapper
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:1vw 5vw;
+}
+nav .nav-links
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+nav .nav-link
+{
+    border: 1px solid;
+    padding: .5rem 1rem;
+    margin-left: .5rem;
+}
+nav .nav-logo
+{
+    font-size: 2rem;
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke:2px #ffff;
+}
+
+/* Hero Section */
+.hero
+{
+    position: relative;
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("assests/hero.jpg") 5% ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero .overlay,
+.about .overlay
+{
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(32, 29, 29, 0.808);
+    position: absolute;
+    z-index: 0;
+}
+.hero .wrapper h1
+{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: white;
+}
+.hero .wrapper
+{
+    padding: 5vw;
+    text-align: center;
+    position: relative;
+    z-index: 9;
+}
+.hero .wrapper .color-me
+{
+    color: coral;
+    font-style: italic;
+}
+
+.hero .wrapper .arrow
+{
+    font-size: 2rem;
+    font-weight: 900;
+    margin-top: 4rem;
+    color: coral;
+}
+
+/* Direction Section */
+.direction 
+{
+    background-color: coral;
+    height: fit-content;
+}
+.direction .wrapper
+{
+    display: flex;
+    width: 35%;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+    color: whitesmoke;
+}
+.direction .wrapper .separator
+{
+    background-color: white;
+    width: 2px;
+    height: 30px;
+    margin: 0 1rem;
+}
+
+/* About Section */
+.about
+{
+    padding: 5rem;
+    background: url("./assests/sec.jpg") bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    position: relative;
+    height: fit-content;
+}
+.about .overlay
+{
+    background: rgba(22, 16, 16, 0.616);
+}
+.about img
+{
+    width: 100%;
+    border-radius: 10px;
+}
+.about .wrapper
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    z-index: 9;
+}
+.about .wrapper .left-side
+{
+    width: 40%;
+    position: relative;
+}
+.about .wrapper .left-side .play
+{
+    font-size: 1.2rem;
+    background-color:coral;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.about .wrapper .right-side,
+.message .wrapper .left-side 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+.about .wrapper .right-side p 
+{
+    line-height: 1.5;
+    margin: 1rem 0;
+    max-width: 400px;
+}
+.about .wrapper .right-side button,
+.message .wrapper .left-side button
+{
+    width: fit-content;
+    padding:.4rem 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    color: whitesmoke;
+    border: 1px solid white;
+}
+
+/* Message Section */
+.message .wrapper
+{
+    display: flex;
+    padding: 5rem;
+    justify-content: space-between;
+}
+.message .wrapper .left-side
+{
+    padding:0 5vw;
+    width: 60%;
+}
+.message .wrapper .left-side button
+{
+    color: black;
+    border: 1px solid;
+    margin:0 auto;
+}
+.message .wrapper .left-side p
+{
+    margin: 1rem 0;
+}
+.message .wrapper .right-side
+{
+    width: 30%;
+    height: 400px;
+}
+.message .wrapper .right-side img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+
+/* Media Queries */
+@media (max-width:1190px) {
+    .direction .wrapper 
+        {
+            width: 60%;
+        }
+}
+@media (max-width:889px) {
+    .about .wrapper {
+        flex-direction: column;
+    }
+    .about .wrapper .left-side
+    {
+        width: 100%;
+    }
+    .about .wrapper .right-side
+    {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .about .wrapper .right-side p
+    {
+        max-width: 100% ;
+    };
+
+
+}
+@media (max-width:714px) {
+    .hero .wrapper h1{
+        font-size: 2rem;
+    }
+    .direction .wrapper 
+    {
+        width: 100% ;
+    }
+    .message .wrapper 
+    {
+        flex-direction: column-reverse;
+    }
+    .message .wrapper .left-side {
+        text-align: center;
+        width: 100%;
+    }
+    .message .wrapper {
+        padding: 1rem;
+    }
+    .message .wrapper .right-side {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .message .wrapper .right-side img{
+        object-fit: contain;
+        object-position: center;
+    }
+}
+@media (max-width:500px) {
+    .hero .wrapper h1{
+        font-size: 1.2rem;
+    }
+    .direction .wrapper 
+    {
+        flex-direction: column;
+    }
+    .direction .wrapper .separator
+    {
+        display: none;
+    }
+    .about
+    {
+        padding: 1rem   ;
+    }
+}
